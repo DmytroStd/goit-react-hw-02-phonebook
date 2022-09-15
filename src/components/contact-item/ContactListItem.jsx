@@ -18,7 +18,7 @@ ContactListItem.propTypes = {
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
   onDeleteContact: PropTypes.func,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };
 
 export default ContactListItem;

@@ -22,14 +22,14 @@ export class App extends Component {
       return alert(`${data.name} : ${data.number} is already in list`);
     }
 
-    const newContact = {
-      id: data.id,
-      name: data.name,
-      number: data.number,
-    };
+    // const newContact = {
+    //   id: data.id,
+    //   name: data.name,
+    //   number: data.number,
+    // };
 
     this.setState(prevState => ({
-      contacts: [newContact, ...prevState.contacts],
+      contacts: [data, ...prevState.contacts],
     }));
   };
 
@@ -53,9 +53,9 @@ export class App extends Component {
 
   findFilterContacts = () => {
     const { contacts, filter } = this.state;
-    // if (!filter) {
-    //   return contacts;
-    // }
+    if (!filter) {
+      return contacts;
+    }
     return contacts.filter(
       contact =>
         contact.name.toLowerCase().includes(filter.toLowerCase()) ||
